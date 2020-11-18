@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="int" Nullable="false" />
+          <Property Name="AddressType" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MailingAddress" Type="bit" Nullable="false" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Address3" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Address4" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Address5" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="StateCode" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="County" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="EnterUserStr" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EnterDateTime" Type="datetime" Nullable="false" />
+          <Property Name="EditUserStr" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="ContactType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="NTLogin" Type="nvarchar" MaxLength="20" />
+          <Property Name="MarketingType" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsParent" Type="bit" Nullable="false" />
+          <Property Name="AccountManagerID" Type="int" />
+          <Property Name="TaxScheduleID" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="ScheduleSerialNums" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BlanketAmt" Type="money" />
+          <Property Name="InsuranceExpirationDate" Type="datetime" />
+          <Property Name="InsuranceType" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="CreditLastReviewDate" Type="datetime" />
+          <Property Name="CreditLimitAmt" Type="money" />
+          <Property Name="CreditDesignation" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SubsidiaryType" Type="nvarchar" MaxLength="24" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="FullLegalName" Type="nvarchar" MaxLength="120" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QuickNote" Type="nvarchar" MaxLength="2048" />
+          <Property Name="Suffix" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="FileAs" Type="nvarchar" MaxLength="220" />
+          <Property Name="PrimaryPhone" Type="nvarchar" MaxLength="60" />
+          <Property Name="PrimaryPhoneExt" Type="nvarchar" MaxLength="8" />
+          <Property Name="HomePhone" Type="nvarchar" MaxLength="60" />
+          <Property Name="HomeFax" Type="nvarchar" MaxLength="60" />
+          <Property Name="MobilePhone" Type="nvarchar" MaxLength="60" />
+          <Property Name="AssistantName" Type="nvarchar" MaxLength="30" />
+          <Property Name="AssistantEmail" Type="nvarchar" MaxLength="120" />
+          <Property Name="AssistantPhone" Type="nvarchar" MaxLength="60" />
+          <Property Name="AssistantPhoneExt" Type="nvarchar" MaxLength="8" />
+          <Property Name="AssistantFax" Type="nvarchar" MaxLength="60" />
+          <Property Name="BusinessPhoneCountry" Type="nvarchar" MaxLength="40" />
+          <Property Name="BusinessPhone" Type="nvarchar" MaxLength="60" />
+          <Property Name="BusinessPhoneExt" Type="nvarchar" MaxLength="8" />
+          <Property Name="BusinessPhone2" Type="nvarchar" MaxLength="60" />
+          <Property Name="BusinessPhone2Ext" Type="nvarchar" MaxLength="8" />
+          <Property Name="CompanyMainPhone" Type="nvarchar" MaxLength="60" />
+          <Property Name="IntlPhoneFormat" Type="bit" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="Email2" Type="nvarchar" MaxLength="120" />
+          <Property Name="Pager" Type="nvarchar" MaxLength="60" />
+          <Property Name="BusinessFax" Type="nvarchar" MaxLength="60" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="OtherPhone" Type="nvarchar" MaxLength="60" />
+          <Property Name="OtherFax" Type="nvarchar" MaxLength="60" />
+          <Property Name="Deletable" Type="bit" Nullable="false" />
+          <Property Name="NoSpamEmail" Type="bit" Nullable="false" />
+          <Property Name="URL" Type="nvarchar" MaxLength="255" />
+          <Property Name="GpClass" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="EmailList" Type="bit" Nullable="false" />
+          <Property Name="ContactPictureFileID" Type="int" />
+          <Property Name="Source" Type="nvarchar" MaxLength="12" />
+          <Property Name="DateVerified" Type="datetime" />
+          <Property Name="EnterUserStr" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EnterDateTime" Type="datetime" Nullable="false" />
+          <Property Name="EditUserStr" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="Endorsements" Type="nvarchar(max)" />
+          <Property Name="CreditNotes" Type="nvarchar(max)" />
+          <Property Name="InsuranceContact" Type="nvarchar(max)" />
+          <Property Name="RUCDNI" Type="varchar" MaxLength="20" />
+          <Property Name="FileNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Jurisdiction" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="WarnIfTaxable" Type="bit" Nullable="false" />
+          <Property Name="InvoicesRequirePO" Type="bit" Nullable="false" />
+          <Property Name="EmailInvoicesTo" Type="nvarchar" MaxLength="120" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContactAddressRelationship">
+          <Key>
+            <PropertyRef Name="ContactAddressRelationshipID" />
+          </Key>
+          <Property Name="ContactAddressRelationshipID" Type="int" Nullable="false" />
+          <Property Name="ContactID" Type="int" Nullable="false" />
+          <Property Name="AddressID" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="EnterUserStr" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EnterDateTime" Type="datetime" Nullable="false" />
+          <Property Name="EditUserStr" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DivisionLocation">
+          <Key>
+            <PropertyRef Name="DivisionLocationID" />
+          </Key>
+          <Property Name="DivisionLocationID" Type="int" Nullable="false" />
+          <Property Name="ServiceManagerID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="BusinessPhone" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="BusinessPhoneExt" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="BusinessFax" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="TollFreeNumber" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubCategoryName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EnterUserStr" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EnterDateTime" Type="datetime" Nullable="false" />
+          <Property Name="EditUserStr" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EditDateTime" Type="datetime" Nullable="false" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Contact_Contact">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="0..1" />
+          <End Role="Contact1" Type="Self.Contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Contact1">
+              <PropertyRef Name="AccountManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactAddressRelationship_Address">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="ContactAddressRelationship" Type="Self.ContactAddressRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="ContactAddressRelationship">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactAddressRelationship_Contact">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="1" />
+          <End Role="ContactAddressRelationship" Type="Self.ContactAddressRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="ContactAddressRelationship">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DivisionLocation_Contact">
+          <End Role="Contact" Type="Self.Contact" Multiplicity="1" />
+          <End Role="DivisionLocation" Type="Self.DivisionLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="DivisionLocation">
+              <PropertyRef Name="ServiceManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactAddressRelationship" EntityType="Self.ContactAddressRelationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DivisionLocation" EntityType="Self.DivisionLocation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Contact_Contact" Association="Self.FK_Contact_Contact">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="Contact1" EntitySet="Contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactAddressRelationship_Address" Association="Self.FK_ContactAddressRelationship_Address">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="ContactAddressRelationship" EntitySet="ContactAddressRelationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactAddressRelationship_Contact" Association="Self.FK_ContactAddressRelationship_Contact">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="ContactAddressRelationship" EntitySet="ContactAddressRelationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DivisionLocation_Contact" Association="Self.FK_DivisionLocation_Contact">
+            <End Role="Contact" EntitySet="Contact" />
+            <End Role="DivisionLocation" EntitySet="DivisionLocation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Contacts" EntityType="Model.Contact" />
+          <AssociationSet Name="FK_Contact_Contact" Association="Model.FK_Contact_Contact">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="Contact1" EntitySet="Contacts" />
+          </AssociationSet>
+          <EntitySet Name="ActiveForSaleContacts" EntityType="Model.ActiveForSaleContact" />
+          <EntitySet Name="Addresses" EntityType="Model.Address" />
+          <EntitySet Name="ContactAddressRelationships" EntityType="Model.ContactAddressRelationship" />
+          <AssociationSet Name="FK_ContactAddressRelationship_Address" Association="Model.FK_ContactAddressRelationship_Address">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="ContactAddressRelationship" EntitySet="ContactAddressRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactAddressRelationship_Contact" Association="Model.FK_ContactAddressRelationship_Contact">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="ContactAddressRelationship" EntitySet="ContactAddressRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="ContactActiveForSaleContact" Association="Model.ContactActiveForSaleContact">
+            <End Role="Contact" EntitySet="Contacts" />
+            <End Role="ActiveForSaleContact" EntitySet="ActiveForSaleContacts" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" />
+          <Property Name="ContactType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NTLogin" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MarketingType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsParent" Type="Boolean" Nullable="false" />
+          <Property Name="AccountManagerID" Type="Int32" />
+          <Property Name="TaxScheduleID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ScheduleSerialNums" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BlanketAmt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="InsuranceExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="InsuranceType" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CreditLastReviewDate" Type="DateTime" Precision="3" />
+          <Property Name="CreditLimitAmt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CreditDesignation" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SubsidiaryType" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="FullLegalName" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuickNote" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="Suffix" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="FileAs" Type="String" MaxLength="220" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryPhoneExt" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="HomePhone" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="HomeFax" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePhone" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="AssistantName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="AssistantEmail" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="AssistantPhone" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="AssistantPhoneExt" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="AssistantFax" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessPhoneCountry" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessPhone" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessPhoneExt" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessPhone2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessPhone2Ext" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyMainPhone" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="IntlPhoneFormat" Type="Boolean" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="Email2" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="Pager" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessFax" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="OtherPhone" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="OtherFax" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Deletable" Type="Boolean" Nullable="false" />
+          <Property Name="NoSpamEmail" Type="Boolean" Nullable="false" />
+          <Property Name="URL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GpClass" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EmailList" Type="Boolean" Nullable="false" />
+          <Property Name="ContactPictureFileID" Type="Int32" />
+          <Property Name="Source" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DateVerified" Type="DateTime" Precision="3" />
+          <Property Name="EnterUserStr" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EnterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditUserStr" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TimeStamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Endorsements" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreditNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InsuranceContact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RUCDNI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FileNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Jurisdiction" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WarnIfTaxable" Type="Boolean" Nullable="false" />
+          <Property Name="InvoicesRequirePO" Type="Boolean" Nullable="false" />
+          <Property Name="EmailInvoicesTo" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contact1" Relationship="Model.FK_Contact_Contact" FromRole="Contact" ToRole="Contact1" />
+          <NavigationProperty Name="Contact2" Relationship="Model.FK_Contact_Contact" FromRole="Contact1" ToRole="Contact" />
+          <NavigationProperty Name="ContactAddressRelationships" Relationship="Model.FK_ContactAddressRelationship_Contact" FromRole="Contact" ToRole="ContactAddressRelationship" />
+          <NavigationProperty Name="ActiveForSaleContacts" Relationship="Model.ContactActiveForSaleContact" FromRole="Contact" ToRole="ActiveForSaleContact" />
+        </EntityType>
+        <Association Name="FK_Contact_Contact">
+          <End Type="Model.Contact" Role="Contact" Multiplicity="0..1" />
+          <End Type="Model.Contact" Role="Contact1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Contact1">
+              <PropertyRef Name="AccountManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ActiveForSaleContact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Nullable="false" annotation:StoreGeneratedPattern="None" Type="Int32" />
+          <Property Name="firstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="lastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" Type="String" />
+          <NavigationProperty Name="Contact" Relationship="Model.ContactActiveForSaleContact" FromRole="ActiveForSaleContact" ToRole="Contact" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="Int32" Nullable="false" />
+          <Property Name="AddressType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MailingAddress" Type="Boolean" Nullable="false" />
+          <Property Name="Address1" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Address3" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Address4" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Address5" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="StateCode" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="EnterUserStr" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EnterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditUserStr" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TimeStamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="ContactAddressRelationships" Relationship="Model.FK_ContactAddressRelationship_Address" FromRole="Address" ToRole="ContactAddressRelationship" />
+        </EntityType>
+        <EntityType Name="ContactAddressRelationship">
+          <Key>
+            <PropertyRef Name="ContactAddressRelationshipID" />
+          </Key>
+          <Property Name="ContactAddressRelationshipID" Type="Int32" Nullable="false" />
+          <Property Name="ContactID" Type="Int32" Nullable="false" />
+          <Property Name="AddressID" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="EnterUserStr" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EnterDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditUserStr" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EditDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TimeStamp" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Address" Relationship="Model.FK_ContactAddressRelationship_Address" FromRole="ContactAddressRelationship" ToRole="Address" />
+          <NavigationProperty Name="Contact" Relationship="Model.FK_ContactAddressRelationship_Contact" FromRole="ContactAddressRelationship" ToRole="Contact" />
+        </EntityType>
+        <Association Name="FK_ContactAddressRelationship_Address">
+          <End Type="Model.Address" Role="Address" Multiplicity="1" />
+          <End Type="Model.ContactAddressRelationship" Role="ContactAddressRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="ContactAddressRelationship">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactAddressRelationship_Contact">
+          <End Type="Model.Contact" Role="Contact" Multiplicity="1" />
+          <End Type="Model.ContactAddressRelationship" Role="ContactAddressRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="ContactAddressRelationship">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContactActiveForSaleContact">
+          <End Type="Model.Contact" Role="Contact" Multiplicity="1" />
+          <End Type="Model.ActiveForSaleContact" Role="ActiveForSaleContact" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Contact">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="ActiveForSaleContact">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model" />
+        <Alias Key="Target" Value="Model.Store" />
+        <EntityContainerMapping CdmEntityContainer="ModelContainer" StorageEntityContainer="ModelStoreContainer">
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="IsTypeOf(Model.Contact)">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="EmailInvoicesTo" ColumnName="EmailInvoicesTo" />
+                <ScalarProperty Name="InvoicesRequirePO" ColumnName="InvoicesRequirePO" />
+                <ScalarProperty Name="WarnIfTaxable" ColumnName="WarnIfTaxable" />
+                <ScalarProperty Name="Jurisdiction" ColumnName="Jurisdiction" />
+                <ScalarProperty Name="FileNumber" ColumnName="FileNumber" />
+                <ScalarProperty Name="RUCDNI" ColumnName="RUCDNI" />
+                <ScalarProperty Name="InsuranceContact" ColumnName="InsuranceContact" />
+                <ScalarProperty Name="CreditNotes" ColumnName="CreditNotes" />
+                <ScalarProperty Name="Endorsements" ColumnName="Endorsements" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+                <ScalarProperty Name="EditUserStr" ColumnName="EditUserStr" />
+                <ScalarProperty Name="EnterDateTime" ColumnName="EnterDateTime" />
+                <ScalarProperty Name="EnterUserStr" ColumnName="EnterUserStr" />
+                <ScalarProperty Name="DateVerified" ColumnName="DateVerified" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="ContactPictureFileID" ColumnName="ContactPictureFileID" />
+                <ScalarProperty Name="EmailList" ColumnName="EmailList" />
+                <ScalarProperty Name="GpClass" ColumnName="GpClass" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="NoSpamEmail" ColumnName="NoSpamEmail" />
+                <ScalarProperty Name="Deletable" ColumnName="Deletable" />
+                <ScalarProperty Name="OtherFax" ColumnName="OtherFax" />
+                <ScalarProperty Name="OtherPhone" ColumnName="OtherPhone" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="BusinessFax" ColumnName="BusinessFax" />
+                <ScalarProperty Name="Pager" ColumnName="Pager" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IntlPhoneFormat" ColumnName="IntlPhoneFormat" />
+                <ScalarProperty Name="CompanyMainPhone" ColumnName="CompanyMainPhone" />
+                <ScalarProperty Name="BusinessPhone2Ext" ColumnName="BusinessPhone2Ext" />
+                <ScalarProperty Name="BusinessPhone2" ColumnName="BusinessPhone2" />
+                <ScalarProperty Name="BusinessPhoneExt" ColumnName="BusinessPhoneExt" />
+                <ScalarProperty Name="BusinessPhone" ColumnName="BusinessPhone" />
+                <ScalarProperty Name="BusinessPhoneCountry" ColumnName="BusinessPhoneCountry" />
+                <ScalarProperty Name="AssistantFax" ColumnName="AssistantFax" />
+                <ScalarProperty Name="AssistantPhoneExt" ColumnName="AssistantPhoneExt" />
+                <ScalarProperty Name="AssistantPhone" ColumnName="AssistantPhone" />
+                <ScalarProperty Name="AssistantEmail" ColumnName="AssistantEmail" />
+                <ScalarProperty Name="AssistantName" ColumnName="AssistantName" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="HomeFax" ColumnName="HomeFax" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="PrimaryPhoneExt" ColumnName="PrimaryPhoneExt" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="FileAs" ColumnName="FileAs" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="QuickNote" ColumnName="QuickNote" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="FullLegalName" ColumnName="FullLegalName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="SubsidiaryType" ColumnName="SubsidiaryType" />
+                <ScalarProperty Name="CreditDesignation" ColumnName="CreditDesignation" />
+                <ScalarProperty Name="CreditLimitAmt" ColumnName="CreditLimitAmt" />
+                <ScalarProperty Name="CreditLastReviewDate" ColumnName="CreditLastReviewDate" />
+                <ScalarProperty Name="InsuranceType" ColumnName="InsuranceType" />
+                <ScalarProperty Name="InsuranceExpirationDate" ColumnName="InsuranceExpirationDate" />
+                <ScalarProperty Name="BlanketAmt" ColumnName="BlanketAmt" />
+                <ScalarProperty Name="ScheduleSerialNums" ColumnName="ScheduleSerialNums" />
+                <ScalarProperty Name="TaxScheduleID" ColumnName="TaxScheduleID" />
+                <ScalarProperty Name="AccountManagerID" ColumnName="AccountManagerID" />
+                <ScalarProperty Name="IsParent" ColumnName="IsParent" />
+                <ScalarProperty Name="MarketingType" ColumnName="MarketingType" />
+                <ScalarProperty Name="NTLogin" ColumnName="NTLogin" />
+                <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActiveForSaleContacts">
+            <EntityTypeMapping TypeName="IsTypeOf(Model.ActiveForSaleContact)">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="lastName" ColumnName="LastName" />
+                <ScalarProperty Name="firstName" ColumnName="FirstName" />
+              </MappingFragment>
+              <MappingFragment StoreEntitySet="Address">
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="Model.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+                <ScalarProperty Name="EditUserStr" ColumnName="EditUserStr" />
+                <ScalarProperty Name="EnterDateTime" ColumnName="EnterDateTime" />
+                <ScalarProperty Name="EnterUserStr" ColumnName="EnterUserStr" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address5" ColumnName="Address5" />
+                <ScalarProperty Name="Address4" ColumnName="Address4" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="MailingAddress" ColumnName="MailingAddress" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactAddressRelationships">
+            <EntityTypeMapping TypeName="Model.ContactAddressRelationship">
+              <MappingFragment StoreEntitySet="ContactAddressRelationship">
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="EditDateTime" ColumnName="EditDateTime" />
+                <ScalarProperty Name="EditUserStr" ColumnName="EditUserStr" />
+                <ScalarProperty Name="EnterDateTime" ColumnName="EnterDateTime" />
+                <ScalarProperty Name="EnterUserStr" ColumnName="EnterUserStr" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="ContactAddressRelationshipID" ColumnName="ContactAddressRelationshipID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

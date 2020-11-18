@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Active For Sale</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+
+    
+            <!--<link rel="stylesheet" href="https://api.wwmach.com/Templates/Styles/ActiveForSale.css" />-->
+
+
+   <style>.bold {
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: Arial;
+  font-size: 12px;
+}
+
+header#recipient {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-items: stretch;
+  height: 55px;
+  padding-bottom: 20px;
+  padding-top: 50px;
+}
+
+header#recipient img {
+  height: 100%;
+}
+
+header#recipient > div:first-of-type {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 13px;
+  line-height: 20px;
+  padding-left: 20px;
+  display:flex;
+  align-items: center;
+}
+
+
+header#recipient > div:last-of-type {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  font-size: 12px;
+  text-align: center;
+  padding: 0 40px;
+  background-color: #ececec;
+  color: orange;
+}
+
+#content > header, section header.variableHeader, section div.emptyHeader, section > a {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+#content > header > div, section header.variableHeader > div, section div.emptyHeader > div, section > a > div {
+  padding: 0.4em;
+}
+
+.col1 {
+  width: 203px;
+  line-height: 9px;
+}
+
+/*Styling to make serial number(col2) wrap*/
+.col2 {
+  width: 132px;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  /*overflow:hidden;
+    text-overflow: ellipsis;*/
+}
+
+.col3 {
+  width: 60px;
+  line-height: 9px;
+}
+
+.col4 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.col5 {
+  width: 125px;
+  line-height: 9px;
+}
+
+.col6 {
+  width: 100px;
+  font-weight: 600;
+  line-height: 9px;
+}
+
+.col7 {
+  width: 100px;
+  font-weight: 600;
+  line-height: 9px;
+}
+
+.col8 {
+  width: 100px;
+  font-weight: 600;
+  line-height: 9px;
+}
+
+#content > header {
+  font-weight: 600;
+  background-color: lightgray;
+}
+
+section header.normalHeader {
+  font-weight: 600;
+  padding: 0.4em;
+  width: 100%;
+  background-color: orange;
+  color: white;
+  page-break-inside: avoid !important;
+}
+
+section header.variableHeader {
+  font-weight: 600;
+  background-color: lightgray;
+  page-break-inside: avoid !important;
+}
+
+section div.emptyHeader {
+  font-weight: 600;
+  background-color: white;
+  page-break-inside: avoid !important;
+}
+
+section > a {
+  cursor: pointer;
+  page-break-inside: avoid !important;
+}
+
+section > a:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+section > a:nth-of-type(even) {
+  background-color: #ececec;
+}
+
+section > a > img {
+  padding: 0.4em 0em;
+  width: 10px;
+  height: 10px;
+}
+
+.price {
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=ActiveForSale.css.map */</style>
+
+</head>
+<body>
+    <header id="recipient">
+        <img id="headerImage" src="https://wwmach.com/filestorage/public/portal/emailresources/wg-logo-black.png" />
+        <div>
+            <h3 class="bold">
+                               <span id="firstName">WORLDWIDE</span>
+                               <span id="lastName">MACHINERY</span>
+               
+            </h3>
+                        <h4>
+                                <span id="street">16031 East Freeway</span> |
+                                <span id="city">Channelview</span>,
+                                <span id="state">TX</span>
+                                <span id="zip">77530</span>
+                
+            </h4>
+            <h4>
+                Phone <span id="phone">800.383.2666</span> |
+                <a id="email" href="mailto:sales@wwmach.com">sales@wwmach.com</a> |
+                <a href="http://www.worldwidemachinery.com">worldwidemachinery.com</a>
+            </h4>
+        </div>
+        <div>
+            <p>FOR SALE LIST</p>
+        </div>
+    </header>
+    <div id="content">
+        <header>
+            <div>&nbsp;</div>
+            <div class="col1">Year / Make / Model</div>
+            <div class="col2">S/N</div>
+            <div class="col3">Hours</div>
+            <div class="col4">Description</div>
+            <div class="col5">Location</div>
+            <div class="col6">List Price</div>
+            <div class="col7">Dealer Price</div>
+            <div class="col8">Special Price</div>
+        </header>
+        <section>
+            <header class="variableHeader"></header>
+            <header class="normalHeader">CRAWLER TRACTORS</header>
+            <div class="emptyHeaderTop"></div>
+            <div class="emptyHeaderBottom"></div>
+            <a>
+                <div class="col1">2008 Caterpillar D8T</div>
+                <div class="col2">9876543210</div>
+                <div class="col3">3,765</div>
+                <div class="col4">Something super longe and verbose is going to go in here. Or, maybe not. We shall see. </div>
+                <div class="col5">Houston, TX</div>
+                <div class="col6">$325,000</div>
+                <div class="col7">$345,000</div>
+                <div class="col8">$305,000</div>
+            </a>
+            <a>
+                <div class="col1">2008 Caterpillar D8T</div>
+                <div class="col2">9876543210</div>
+                <div class="col3">3,765</div>
+                <div class="col4">Blah, blah, blah</div>
+                <div class="col5">Houston, TX</div>
+                <div class="col6">$325,000</div>
+                <div class="col7">$345,000</div>
+                <div class="col8">$305,000</div>
+            </a>
+            <a>
+                <div class="col1">2008 Caterpillar D8T</div>
+                <div class="col2">9876543210</div>
+                <div class="col3">3,765</div>
+                <div class="col4">Blah, blah, blah</div>
+                <div class="col5">Houston, TX</div>
+                <div class="col6">$325,000</div>
+                <div class="col7">$345,000</div>
+                <div class="col8">$305,000</div>
+            </a>
+        </section>
+    </div>
+</body>
+</html>

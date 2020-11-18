@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Issue Track Notification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        /* Prevent WebKit and Windows mobile changing default text sizes */
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        /* Remove spacing between tables in Outlook 2007 and up */
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+        /* Allow smoother rendering of resized image in Internet Explorer */
+
+        /* RESET STYLES */
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* MOBILE STYLES */
+        @media screen and (max-width: 525px) {
+
+            /* ALLOWS FOR FLUID TABLES */
+            .wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            /* ADJUSTS LAYOUT OF LOGO IMAGE */
+            .logo img {
+                margin: 0 auto !important;
+            }
+
+            /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+            .mobile-hide {
+                display: none !important;
+            }
+
+            .img-max {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            /* FULL-WIDTH TABLES */
+            .responsive-table {
+                width: 100% !important;
+            }
+
+            /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+            .padding {
+                padding: 10px 5% 15px 5% !important;
+            }
+
+            .padding-meta {
+                padding: 30px 5% 0px 5% !important;
+                text-align: center;
+            }
+
+            .padding-copy {
+                padding: 10px 5% 10px 5% !important;
+                text-align: center;
+            }
+
+            .no-padding {
+                padding: 0 !important;
+            }
+
+            .section-padding {
+                padding: 50px 15px 50px 15px !important;
+            }
+
+            /* ADJUST BUTTONS ON MOBILE */
+            .mobile-button-container {
+                margin: 0 auto;
+                width: 100% !important;
+            }
+
+            .mobile-button {
+                padding: 15px !important;
+                border: 0 !important;
+                font-size: 16px !important;
+                display: block !important;
+            }
+        }
+
+        /* ANDROID CENTER FIX */
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body style="margin:0 !important;padding:20px 0 0 !important;background-color:#f0f0f0;">
+    <!--[if mso]>
+        <style type="text/css">
+        body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
+        </style>
+    <![endif]-->
+    <!-- HIDDEN PREHEADER TEXT -->
+    <!-- HEADER -->
+    <table bgcolor="#f0f0f0" border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family: 'Helvetica', 'Arial', sans-serif;">
+        <tr>
+            <td align="center">
+                <!--[if (gte mso 9)|(IE)]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                <tr>
+                <td align="center" valign="top" width="500">
+                <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:500px;background-color:#000000;" class="responsive-table">
+                    <tr>
+                        <td align="center" valign="top" style="padding:15px 0;color:#ffffff;text-transform:uppercase;font-size:32px;border-bottom:5px solid #FEBF10;font-family: 'Helvetica', 'Arial', sans-serif;" class="logo">
+                            WG Development
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <tr>
+            <td align="center" class="section-padding">
+                <!--[if (gte mso 9)|(IE)]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                <tr>
+                <td align="center" valign="top" width="500">
+                <![endif]-->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:500px;background-color:#ffffff;" class="responsive-table">
+                    <tr>
+                        <td style="padding:0 20px;">
+                            <!-- HERO IMAGE -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td colspan="2" class="padding" align="center" style="font-family: 'Helvetica', 'Arial', sans-serif;text-transform:uppercase;color:#FCAF17;font-size:22px;padding:10px 20px;border-bottom:1px solid #BBBDBF;">
+                                        {FirstName} {LastName} {IssueTrackAction}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;">Issue #:</td>
+                                    <td class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;"><a href="{Url}">{IssueID}</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;">Summary:</td>
+                                    <td class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;"><a href="{Url}">{LinkMessage}</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;">Reported:</td>
+                                    <td class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;">{Date}</td>
+                                </tr>
+                                <tr>
+                                    <td class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;">Developer:</td>
+                                    <td class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;">{FirstName} {LastName}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;">Resolution:</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="padding" style="font-family: 'Helvetica', 'Arial', sans-serif;padding-top:20px;">{MessageBody}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="padding" align="center" style="font-family: 'Helvetica', 'Arial', sans-serif; padding-top:50px; padding-bottom:20px;"><a href="{Url}">Click here to respond</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center" valign="top" class="mcnTextContent" style="padding:15px 18px 15px;color:#FFB700;border-top:1px solid #BBBDBF;font-family: 'Helvetica', 'Arial', sans-serif;">
+                                        <p style="font-size:22px;color: #FFB700;margin-bottom:5px;font-family: 'Helvetica', 'Arial', sans-serif;">For questions or comments:</p>
+                                        <a style="font-size:22px;color: #FFB700;margin-bottom:25px;text-decoration:none;font-weight:bold;font-family: 'Helvetica', 'Arial', sans-serif;" href="mailto:applicationsupport@wwmach.com?subject=Dev%20Status%20Report" target="_blank">App Support</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" valign="top" class="mcnTextContent" style="padding:0 18px 20px;color:#FFB700;text-align:center;font-family: 'Helvetica', 'Arial', sans-serif;">
+                                        <a style="width:30px;height:30px;text-decoration:none;margin-right:10px;font-family: 'Helvetica', 'Arial', sans-serif;" href="mailto:applicationsupport@wwmach.com?subject=Dev%20Status%20Report" target="_blank">
+                                            <img src="https://wwmach.com/FIleStorage/public/icons/email.svg" alt="email">
+                                        </a>
+                                        <!--<a style="width:30px;height:30px;text-decoration:none;margin-right:10px;font-family: 'Helvetica', 'Arial', sans-serif;" href="sms:2543389695" target="_blank">
+                                            <img src="https://wwmach.com/FIleStorage/public/icons/message.svg" alt="text">
+                                        </a>
+                                        <a style="width:30px;height:30px;text-decoration:none;font-family: 'Helvetica', 'Arial', sans-serif;" href="tel:2543389695" target="_blank">
+                                            <img src="https://wwmach.com/FIleStorage/public/icons/phone.svg" alt="call">
+                                        </a>-->
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <!--[if (gte mso 9)|(IE)]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="500">
+                <tr>
+                <td align="center" valign="top" width="500">
+                <![endif]-->
+                <!-- UNSUBSCRIBE COPY -->
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width:500px;" class="responsive-table">
+                    <tr>
+                        <td bgcolor="#E6E7E8" align="center" style="padding:20px 0;">
+                            <a href="https://wwmach.com/" target="_blank">
+                                <img alt="Logo" src="https://wwmach.com/FIleStorage/public/icons/wg-logo.svg" style="display:block;" border="0">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="font-size: 12px;line-height: 18px;font-family: 'Helvetica', 'Arial', sans-serif;color:#666666;padding:20px 0;">
+                            If you have any issues with the above link, or you have any issue with the M1 mobile app directly, please <a href="mailto:applicationsupport@wwmach.com?subject=Dev%20Status%20Report">click here</a> to report your issue.
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

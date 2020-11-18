@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="M:API.Controllers.AttachmentController.GetAttachment(API.Models.AttachmentSearch)">
+            <summary>
+            Returns list of all attachments that match search criteria
+            </summary>
+        </member>
+        <member name="M:API.Controllers.AttachmentController.GetAttachmentCategories">
+            <summary>
+            Returns list of all attachment categories
+            </summary>
+        </member>
+        <member name="M:API.Controllers.AttachmentController.GetAttachmentManufacturers(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Returns list of applicable attachment manufacturers
+            </summary>
+        </member>
+        <member name="M:API.Controllers.AttachmentController.GetAttachmentModels(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Returns list of applicable attachment models
+            </summary>
+        </member>
+        <member name="M:API.Controllers.AttachmentController.GetAttachmentTypes(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Returns list of applicable attachment types
+            </summary>
+        </member>
+        <member name="M:API.Controllers.AuthController.Authenticate(API.Models.Credentials)">
+            <summary>
+            Returns JWT (JSON Web Token) if authentication is successful
+            </summary>
+            <param name="credentials">Credentials</param>
+            <response code="403">Authentication Failed</response>
+            <response code="200">Authentication Success</response>
+        </member>
+        <member name="M:API.Controllers.AuthController.CheckAuth">
+            <summary>
+            Returns HTTP status to verify authentication
+            </summary>
+        </member>
+        <member name="M:API.Controllers.DivisionController.GetEquipmentDivisions">
+            <summary>
+            Returns list of all divisions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.DivisionController.GetEquipmentDivisions(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Returns list of all applicable divisions
+            </summary>
+        </member>
+        <member name="M:API.Controllers.ContactController.GetMyClients(System.String)">
+            <summary>
+            Returns list of all contacts owned by sales manager
+            </summary>
+        </member>
+        <member name="M:API.Controllers.ContactController.GetUserContacts(System.String)">
+            <summary>
+            Returns list of all contacts assigned to user
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MachineController.GetEquipment(API.Models.MachineSearch)">
+            <summary>
+            Returns list of all machines that match search criteria
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MachineController.GetMachineRates">
+            <summary>
+            Returns current list of machine rental rates
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MachineController.GetMachinesForSale">
+            <summary>
+            Returns current list of machines that are actively for sale
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MachineController.GetMachineCategories">
+            <summary>
+            Returns current list of all machine categories
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MachineController.GetMachineManufacturers(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Returns list of all applicable machine manufacturers
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MachineController.GetMachineModels(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Returns list of all applicable machine models
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MachineController.GetAvailableMachineYears">
+            <summary>
+            Returns list of years from 1961 to current year
+            </summary>
+        </member>
+        <member name="M:API.Controllers.MachineController.GetAvailableMachinePrices">
+            <summary>
+            Returns list of price intervals for dropdowns
+            </summary>
+        </member>
+        <member name="M:API.Controllers.QuoteController.SendQuickQuoteEmail(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Creates quote and sends quote email
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.EquipmentController.GetEquipmentBySerialNum(System.String)">
+            <summary>
+            Returns equipment info by serial number
+            </summary>
+        </member>
+        <member name="M:API.Controllers.EquipmentController.GetEquipmentPhotos(System.String,System.String)">
+            <summary>
+            Returns equipment photos by EquipmentID and photo size (SM, MD, LG)
+            </summary>
+        </member>
+        <member name="M:API.Controllers.EquipmentController.GetEquipmentAttachments(System.String)">
+            <summary>
+            Returns attachment by EquipmentID
+            </summary>
+        </member>
+        <member name="M:API.Controllers.EquipmentController.GetEquipmentManufacturers">
+            <summary>
+            Returns distinct list of all Manufacturers
+            </summary>
+        </member>
+        <member name="M:API.Controllers.EquipmentController.GetEquipmentModels">
+            <summary>
+            Returns distinct list of all equipment models
+            </summary>
+        </member>
+        <member name="M:API.Controllers.EquipmentController.GetEquipmentLocations">
+            <summary>
+            Returns distinct list of all current machine locations
+            </summary>
+        </member>
+        <member name="M:API.Controllers.EquipmentController.GetRentalStatuses">
+            <summary>
+            Returns distinct list of all equipment rental statuses
+            </summary>
+        </member>
+        <member name="M:API.Controllers.ReleaseNotesController.GetMostRecentReleaseNotes(System.String)">
+            <summary>
+            Returns most recent release notes by system
+            </summary>
+            <param name="system"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ReleaseNotesController.Get(System.String)">
+            <summary>
+            Conditionally returns most recent release notes by system
+            </summary>
+            <remarks>Uses the JWT (JSON Web Token) to grab username and checks to see if release notes have already been viewed. Returns empty if previously viewed.</remarks>
+            <param name="system"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ServiceController.GetServiceOrderById(System.String)">
+            <summary>
+            Returns service by Service ID
+            </summary>
+            <param name="id"></param>
+            <returns>Service</returns>
+        </member>
+        <member name="M:API.Controllers.ServiceController.GetServiceOrderByWorkOrderNum(System.String)">
+            <summary>
+            Return service by work order number
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ServiceController.GetEquipmentServiceHistory(System.String)">
+            <summary>
+            Returns list of services by Equipment ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.ServiceController.GetEquipmentComponentHistory(System.String)">
+            <summary>
+            Returns list of components by Equipment ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:API.Controllers.YardController.Get">
+            <summary>
+            Returns list of parent/child yards
+            </summary>
+            <returns>Equipment</returns>
+        </member>
+    </members>
+</doc>

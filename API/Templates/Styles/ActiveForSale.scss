@@ -1,0 +1,156 @@
+﻿@import 'FlexboxMixin.scss';
+
+$gray: lighten(lightgray, 10%);
+$orange: orange;
+$padding: .4em;
+$paddingImage: .4em 0em;
+
+.bold { font-weight: 600; }
+.hidden { display: none; }
+
+@mixin truncate ($width) {
+    width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+body {
+    font-family: Arial;
+    font-size: 12px;
+}
+
+
+header#recipient {
+    @include flexbox();
+    @include flex-direction(row);
+    @include align-items(stretch);
+
+    height: 55px;
+    padding-bottom: 20px;
+    padding-top: 50px;
+
+
+    img { height: 100%; }
+
+    > div:first-of-type {
+        @include flex(1);
+
+        font-size: 13px;
+        line-height: 20px;
+        padding-left: 20px;
+
+        h4{
+            display:flex;
+    align-items: center;
+        }
+    }
+
+    > div:last-of-type {
+        @include flexbox();
+        @include align-items(center);
+                
+        font-size: 12px;
+        text-align: center;
+        padding: 0 40px;
+        background-color: $gray;
+        color: $orange;
+    }
+}
+
+
+%row {
+
+    @include flexbox();
+
+    > div { padding: $padding; }
+}
+
+.col1 { width: 200px; line-height: 9px;}
+
+
+/*Styling to make serial number(col2) wrap*/
+.col2 {
+    width: 127px;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    /*overflow:hidden;
+    text-overflow: ellipsis;*/
+}                                 
+.col3 { width: 50px; line-height: 9px;}
+.col4 { @include flex(1); }
+.col5 { width: 125px; line-height: 9px; }
+.col6 
+{ 
+    width: 100px;    
+    font-weight: 600;
+    line-height: 9px;
+}
+.col7 
+{ 
+    width: 100px; 
+    font-weight: 600;
+    line-height: 9px;
+}
+
+#content > header {
+
+    @extend %row;
+    
+    font-weight: 600;
+    background-color: lightgray;
+}
+
+section {
+    header.normalHeader{
+        font-weight: 600;
+        padding: $padding;
+        width: 100%;
+        background-color: $orange;
+        color: white;
+        page-break-inside: avoid !important;
+    }
+    header.variableHeader{
+        @extend %row;
+
+        font-weight: 600;
+        background-color: lightgray;
+        page-break-inside: avoid !important;
+    }
+    div.emptyHeader{
+        @extend %row;
+        font-weight: 600;
+        background-color: white;
+        page-break-inside: avoid !important;
+    }
+    
+}
+
+section > a {
+
+    @extend %row;
+    cursor: pointer;
+
+    &:link {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &:nth-of-type(even){
+        background-color: $gray;
+    }
+
+    page-break-inside: avoid !important;
+}
+
+section > a > img {
+   padding: $paddingImage;
+   width: 10px;
+   height: 10px;
+}
+
+.price {
+    font-weight: 600;
+}

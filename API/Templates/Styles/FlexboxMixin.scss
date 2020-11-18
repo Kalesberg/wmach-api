@@ -1,0 +1,28 @@
+﻿@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin align-items($val) {
+    -webkit-box-align: $val;
+    -webkit-align-items: $val;
+    -ms-flex-align: $val;
+    -ms-grid-row-align: $val;
+    align-items: $val;
+}
+
+@mixin flex-direction($val) {
+    -ms-flex-direction: $val;
+    -webkit-flex-direction: $val;
+    flex-direction: $val;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
